@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Support Assistant – Test Page</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f7fa;
+      color: #1a1a2e;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    header .logo {
+      width: 36px;
+      height: 36px;
+      background: #0f6e56;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header .logo svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+    header h1 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1a1a2e;
+    }
+
+    header .badge {
+      margin-left: auto;
+      background: #e1f5ee;
+      color: #0f6e56;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid #9fe1cb;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 24px 60px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero .tag {
+      display: inline-block;
+      background: #e6f1fb;
+      color: #185fa5;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #b5d4f4;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #1a1a2e;
+      margin-bottom: 16px;
+    }
+
+    .hero h2 span {
+      color: #0f6e56;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: #5f6b7c;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0f6e56;
+      color: white;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 13px 28px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .cta-btn:hover { background: #085041; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 22px;
+    }
+
+    .card .icon.green { background: #e1f5ee; }
+    .card .icon.blue  { background: #e6f1fb; }
+    .card .icon.amber { background: #faeeda; }
+
+    .card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: #5f6b7c;
+      line-height: 1.6;
+    }
+
+    .info-banner {
+      max-width: 680px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+
+    .info-banner .inner {
+      background: #fff8e1;
+      border: 1px solid #fac775;
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .info-banner .inner span.ic {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .info-banner .inner p {
+      font-size: 13px;
+      color: #633806;
+      line-height: 1.6;
+    }
+
+    .info-banner .inner p strong {
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      font-size: 13px;
+      color: #a0aec0;
+      border-top: 1px solid #e2e8f0;
+      background: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/>
+      </svg>
+    </div>
+    <h1>Support Assistant</h1>
+    <span class="badge">&#x25CF; Test Environment</span>
+  </header>
+
+  <section class="hero">
+    <div class="tag">&#x1F916; AI-Powered Support</div>
+    <h2>How can we <span>help you</span> today?</h2>
+    <p>This is a test environment for our AI support agent. Click the chat icon in the bottom-right corner to start a conversation and explore what our assistant can do.</p>
+    <a class="cta-btn" href="#" onclick="return false;">
+      &#x1F4AC; Start a conversation
+    </a>
+  </section>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon green">&#x2139;&#xFE0F;</div>
+      <h3>Get instant answers</h3>
+      <p>Ask any question and get an immediate response from our AI agent, available 24/7.</p>
+    </div>
+    <div class="card">
+      <div class="icon blue">&#x1F4CB;</div>
+      <h3>Submit a request</h3>
+      <p>Need to escalate? The agent can open a support ticket on your behalf in seconds.</p>
+    </div>
+    <div class="card">
+      <div class="icon amber">&#x1F4DA;</div>
+      <h3>Browse help articles</h3>
+      <p>The assistant can search and surface relevant knowledge base articles for you.</p>
+    </div>
+  </div>
+
+  <div class="info-banner">
+    <div class="inner">
+      <span class="ic">&#x26A0;&#xFE0F;</span>
+      <p><strong>Test environment notice:</strong> This page is for internal testing only. Do not share sensitive or personal data during testing. All conversations may be reviewed for quality assurance purposes.</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 &nbsp;&middot;&nbsp; Internal Test Page &nbsp;&middot;&nbsp; Powered by Zendesk AI
+  </footer>
+
+  <!-- ============================================================
+       PASTE YOUR ZENDESK WEB WIDGET SCRIPT BELOW THIS LINE
+       Example:
+       <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=YOUR_KEY"></script>
+  ============================================================ -->
+
+
+
+  <!-- ============================================================
+       END OF ZENDESK WIDGET SCRIPT
+  ============================================================ -->
+
+</body>
+</html>
